@@ -824,7 +824,7 @@ body{
             }
         }
 
-        .desserts{ 
+            .desserts{ 
             .desserts__title{
                 @include courseName;
                 animation: slideInRight 0.4s 2.6s ease-out forwards, bounceRight 0.8s 3s;
