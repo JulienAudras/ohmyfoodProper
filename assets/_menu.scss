@@ -1,0 +1,395 @@
+@import "main.scss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700;900&family=Shrikhand&display=swap');
+
+@mixin photoMenu{
+    width:100%;
+    height: 275px;
+    object-fit: cover;
+}
+
+
+@mixin courseName{
+    font-size: 1.6rem;
+    font-weight: 300;
+    padding-top: 10px;
+    padding-left: 13px;
+    position: relative;
+    transform: translateX(200%);
+}
+
+@mixin underline{
+        content:"";
+        display: block;
+        position: absolute;
+        bottom:-4px;
+        width:40px ;
+        height: 3px;
+        background-color: $tertiary-color;
+    }
+    
+@mixin menuButton{
+    background-color: $main-background-color;
+    margin: 12px 13px;
+    border-radius: 15px;
+    box-shadow: 0px 7px 10px rgba(0,0,0,0.15);
+}
+
+
+@mixin responsiveMenuTitle{
+    @media (min-width: 768px){
+        padding-left: 0;
+        justify-content: center;
+        gap: 24px;   
+        padding-left: 14.58%;
+        padding-right: 14.58%;    
+    }
+}
+
+@mixin reponsiveMenuSection{
+    @media (min-width: 768px){
+        width:73.26%;
+        margin-left: auto;
+        margin-right: auto;     
+        }
+}
+
+
+
+@mixin menuItem{
+    .menu__item{
+        @include menuButton;
+        position: relative;
+        box-sizing: border-box;
+
+        transform: translateX(-200%);
+
+          
+        .menu__item--content{
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            &:hover{
+            padding-right:58.2px ;
+        }
+
+        &:hover + .menu__item--checkBox{
+            transform: scaleX(1);
+        }
+        }
+        .menu__item--title{
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-top: 0;
+            margin-bottom: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding-left: 15px; 
+            padding-top: 12px;
+        }
+        .menu__item--details{
+            display: flex;
+            width: 100%; 
+            padding-left: 15px;
+            padding-bottom: 12px;
+            margin-top: 5px;     
+            .menu__item--details--txt{
+                font-size: 1.5rem;
+                font-weight: 300;
+                margin-bottom: 0;
+                margin-right: auto;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                margin-top: 5px;
+            }
+            .menu__item--details--price{
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-bottom: 0;
+                margin-top: 5px;
+                margin-right: 15px;       
+            }
+        }
+        .menu__item--checkBox{
+                display: flex;
+                justify-content: center;
+                justify-self: flex-start;
+                align-self: flex-end;
+                align-items: center;
+                position: absolute;
+                right:0;
+                top:0;
+                width:58.2px;
+                transform: scaleX(0);
+                transform-origin: right ;
+                height: 74px;
+                background-color: $tertiary-color;
+                border-radius:0 15px 15px 0;
+                transition: transform 0.2s ease;
+                           
+            .menu__item--checkBox--icon{
+                color: $main-background-color
+            }
+         }
+        
+    }
+}
+
+@mixin menuDisplay{
+    .menu__item--first{
+        @include menuButton;
+        margin-top: 20px;
+    }
+    @include menuItem;
+    padding-bottom: 20px;
+    @media (min-width: 768px){
+        padding-left: 14.58%;
+        padding-right: 14.58%;
+        }
+}
+
+@mixin responsiveMenuTitle{
+    @media (min-width: 768px){
+        padding-left: 0;
+        justify-content: center;
+        gap: 24px;   
+        padding-left: 14.58%;
+        padding-right: 14.58%;    
+    }
+}
+
+@mixin reponsiveMenuSection{
+    @media (min-width: 768px){
+        width:73.26%;
+        margin-left: auto;
+        margin-right: auto;
+       
+        }
+}
+
+@keyframes slideInRight{
+    0%{
+        transform: translateX(200%)
+    }
+    100%{
+        transform: translateX(0%)
+    }
+}
+
+@keyframes slideInLeft{
+    0%{
+        transform: translateX(-200%)
+    }
+    100%{
+        transform: translateX(0%)
+    }
+}
+
+@keyframes bounceRight {
+
+    0%{
+        transform: translateX(0);
+    } 
+    20%{
+        transform: translateX(20px);
+    }
+    40%{
+        transform: translateX(0px);
+    }
+    60% {
+        transform: translateX(10px);
+    } 
+    80%{
+        transform: translateX(0);
+    }
+    70% {
+        transform: translateX(5px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+ }
+
+ @keyframes bounceLeft {
+
+    0%{
+        transform: translateX(0);
+    } 
+    20%{
+        transform: translateX(-20px);
+    }
+    40%{
+        transform: translateX(0px);
+    }
+    60% {transform: translateX(-10px);
+    } 
+    80%{
+        transform: translateX(0);
+    }
+    70% {transform: translateX(-5px);
+    }
+    100%{transform: translateX(0);
+    }
+ }  
+
+ @keyframes check{
+    0%{
+        width:0;
+    }
+    100%{
+        width:58.2px;
+    }
+ }
+
+body{
+    background-color: $main-background-color;
+    margin:0;
+
+    .header__menu{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        justify-content: space-around;
+        margin-left: 23px;
+        position: relative;
+        .arrowLink{
+            position: absolute;
+            left:23px;
+            color: inherit;
+        }
+        .header__menu--logo{
+        @include logo;
+        }
+    }
+
+    .introPhoto{
+        width:100%;
+        .introPhoto__img{
+            @include photoMenu;
+            @media (min-width: 768px){
+                height: 383px;
+                object-position: 50% 58%;
+                }
+        }
+        
+    }
+
+    .mainSection{
+        background-color: $secondary-background-color;
+        margin-top: -58px;
+        border-radius: 40px 40px 0 0;
+        @include reponsiveMenuSection;
+    }
+    .menu__titre{
+        background-color: $secondary-background-color;
+        border-radius: 40px 40px 0 0 ;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content:space-between;
+        padding-left: 17px;
+        padding-right: 41px;
+        gap:20px;
+            .menu__titre--title{
+                font-family: Shrikhand;
+                font-size: 2.8rem;
+                font-style: italic;
+                font-weight: 400;
+            }
+            .menu__titre--icon{
+                font-size: 22px;
+                -webkit-text-stroke:1.25px $secondary-background-color;
+                background-image:$secondary-background-color;
+                -webkit-text-fill-color: transparent;
+                -webkit-text-stroke: 1px black;
+                background-clip: text;
+                -webkit-background-clip: text;
+                &:hover{
+                    background-image:linear-gradient(to bottom, $main-color, $secondary-color);
+                }
+            }  
+        @include responsiveMenuTitle;             
+        }
+        
+        .starters{
+            .starters__title{
+                @include courseName;
+                animation: slideInRight 0.4s ease-out forwards, bounceRight 0.8s 0.4s;
+            }
+            .starters__title::after{
+                @include underline;
+            }
+            @include menuDisplay;
+            
+            .starters__item--first{
+                animation: slideInLeft 0.3s 0.4s ease-out forwards, bounceLeft 0.6s 0.7s;
+            }
+            .starters__item--second{
+                animation: slideInLeft 0.3s 0.7s ease-out forwards, bounceLeft 0.6s 1s;
+            }
+            .starters__item--third{
+                animation: slideInLeft 0.3s 1s ease-out forwards, bounceLeft 0.6s 1.3s;
+            }
+        
+        }
+
+        .mainCourses{         
+            .mainCourses__title{
+                @include courseName;
+                animation: slideInRight 0.4s 1.3s ease-out forwards, bounceRight 0.8s 1.7s;
+
+            }
+            .mainCourses__title::after{
+                @include underline;
+            }
+            @include menuDisplay;
+            
+            .mainCourses__item--first{
+                animation: slideInLeft 0.3s 1.7s ease-out forwards, bounceLeft 0.6s 2s;
+            }
+            .mainCourses__item--second{
+                animation: slideInLeft 0.3s 2s ease-out forwards, bounceLeft 0.6s 2.3s;
+            }
+            .mainCourses__item--third{
+                animation: slideInLeft 0.3s 2.3s ease-out forwards, bounceLeft 0.6s 2.6s;
+            }
+        }
+
+            .desserts{ 
+            .desserts__title{
+                @include courseName;
+                animation: slideInRight 0.4s 2.6s ease-out forwards, bounceRight 0.8s 3s;
+            }
+            .desserts__title::after{
+                @include underline;
+            }
+            @include menuDisplay;
+            
+            .desserts__item--first{
+                animation: slideInLeft 0.3s 3s ease-out forwards, bounceLeft 0.6s 3.3s;
+            }
+            .desserts__item--second{
+                animation: slideInLeft 0.3s 3.3s ease-out forwards, bounceLeft 0.6s 3.6s;
+            }
+            .desserts__item--third{
+                animation: slideInLeft 0.3s 3.6s ease-out forwards, bounceLeft 0.6s 3.9s;
+            }
+
+        
+
+        }
+
+        .btnOrder{    
+            display: flex;
+            justify-content: center;
+            padding-top: 10px;
+            padding-bottom: 30px;
+            .btnOrder__btn{
+                @include button;
+                width: 18.6rem;           
+            }
+            @include reponsiveMenuSection;
+        }
+
+    }
