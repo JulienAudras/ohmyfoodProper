@@ -327,6 +327,7 @@ body{
                     -webkit-text-fill-color: transparent;
                     -webkit-text-stroke: 0px $secondary-background-color;
                     -webkit-background-clip: text;
+                    background-clip: text;
                     position: absolute;
                     top:0px;
                     right:0px;

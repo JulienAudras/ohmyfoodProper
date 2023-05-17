@@ -386,7 +386,7 @@ body .restaurants .restaurantsCards .restaurantsCards__card .restaurantsCards__c
   z-index: 1;
   position: relative;
 }
-body .restaurants .restaurantsCards .restaurantsCards__card .restaurantsCards__card--content .restaurantsCards__card--content--restaurant {
+body .restaurants .restaurantsCards .restaurantsCards__card .restaurantsCards__card--content--restaurant {
   grid-area: restaurant;
   font-size: 18px;
   margin-top: 16px;
@@ -405,10 +405,11 @@ body .restaurants .restaurantsCards .restaurantsCards__card .restaurantsCards__c
 }
 body .restaurants .restaurantsCards .restaurantsCards__card .restaurantsCards__card--content .restaurantsCards__card--content--icon {
   font-size: 2.3rem;
-  background-image: #FFFFFF;
+  background-color: #FFFFFF;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px black;
+  background-clip: text;
   position: absolute;
   bottom: 27px;
   right: 25px;
@@ -424,6 +425,7 @@ body .restaurants .restaurantsCards .restaurantsCards__card .restaurantsCards__c
   font-size: 2.3rem;
   background-image: linear-gradient(352deg, #9356dc, #ff79da);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 0px #FFFFFF;
   position: absolute;
@@ -694,6 +696,7 @@ body .menu__titre .menu__titre--icon .menu__titre--icon--checked {
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 0px #F7F7F7;
   -webkit-background-clip: text;
+  background-clip: text;
   position: absolute;
   top: 0px;
   right: 0px;
