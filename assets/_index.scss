@@ -439,10 +439,13 @@ footer {
       }
     }
     .contact {
+      padding-top: 15px;
       @media (min-width: 768px) {
         margin-left: 1.18%;
+        padding-top: 0px;
       }
     }
+   
     .legal {
       @media (min-width: 768px) {
         margin-left: 3.47%;

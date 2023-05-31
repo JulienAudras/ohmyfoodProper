@@ -13,6 +13,12 @@
   font-size: 10px;
 }
 
+a {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #ffffff;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -20,6 +26,12 @@
 :root {
   font-family: Roboto;
   font-size: 10px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #ffffff;
 }
 
 @keyframes fadeAway {
@@ -516,9 +528,13 @@ footer .footer__content .footer__line {
     font-size: 1.6rem;
   }
 }
+footer .footer__content .contact {
+  padding-top: 15px;
+}
 @media (min-width: 768px) {
   footer .footer__content .contact {
     margin-left: 1.18%;
+    padding-top: 0px;
   }
 }
 @media (min-width: 768px) {
@@ -539,6 +555,12 @@ footer .footer__content .footer__line {
 :root {
   font-family: Roboto;
   font-size: 10px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #ffffff;
 }
 
 @keyframes slideInRight {
